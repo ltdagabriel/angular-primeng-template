@@ -1,0 +1,49 @@
+<app-header [activeLink]="'/vendas'"></app-header>
+
+
+
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    <mat-list class="container">
+      <h2>Movies</h2>
+      <hr />
+      <div
+        cdkDropList
+        #moviesList="cdkDropList"
+        [cdkDropListData]="MoviesList"
+        [cdkDropListConnectedTo]="[doneMovieList]"
+        (cdkDropListDropped)="onDrop($event)"
+        class="movie-list" 
+      >
+        @for (movieList of MoviesList; track movieList) {
+        <mat-list-item class="movie-block" cdkDrag>
+          {{ movieList }}
+        </mat-list-item>
+        }
+      </div>
+    </mat-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-list class="container">
+      <h2>Movies What</h2>
+      <hr />
+      <div
+        cdkDropList
+        #doneMovieList="cdkDropList"
+        [cdkDropListData]="MoviesWatched"
+        [cdkDropListConnectedTo]="[moviesList]"
+        class="movie-list" 
+        (cdkDropListDropped)="onDrop($event)"
+      >
+        @for (m of MoviesWatched; track m) {
+        <mat-list-item class="movie-block" cdkDrag>
+          {{ m }}
+        </mat-list-item>
+        }
+      </div>
+    </mat-list>
+  </mat-grid-tile>
+
+</mat-grid-list>
+<app-footer></app-footer>

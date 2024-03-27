@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit{
   links = [
     { 'titulo': 'Dasboard', 'url': '/' },
     { 'titulo': 'Produtos', 'url': '/products' },
-    { 'titulo': 'Teste', 'url': '/test' }
+    { 'titulo': 'Vendas', 'url': '/vendas' },
+    { 'titulo': 'Entidades', 'url': '/entidades' }
   ]
   @Input() activeLink: string = '/';
   constructor(private router: Router){
