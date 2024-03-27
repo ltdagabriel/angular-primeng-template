@@ -1,7 +1,9 @@
-<nav>
-  <a routerLink="/">Home</a>
-  |
-  <a routerLink="/products">Products</a>
-  |
-  <a routerLink="/test">Test</a>
+
+<nav mat-tab-nav-bar  [backgroundColor]="'primary'" [tabPanel]="tabPanel">
+  @for (link of links; track link) {
+    <a mat-tab-link
+      [href]="link.url"
+      [active]="activeLink === link.url"> {{link.titulo}} </a>
+  }
 </nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>

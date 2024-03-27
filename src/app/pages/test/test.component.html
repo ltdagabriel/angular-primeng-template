@@ -1,3 +1,6 @@
+<app-header [activeLink]="'/test'"></app-header>
+
+
 <h1>Counter (signalStore)</h1>
 
 <p>Count: {{ store.count() }}</p>
@@ -5,3 +8,4 @@
 
 <p-button label="Increment" (click)="store.increment()"></p-button>
 <p-button label="Decrement" (click)="store.decrement()"></p-button>
+<app-footer></app-footer>
